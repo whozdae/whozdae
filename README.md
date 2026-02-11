@@ -12,6 +12,10 @@ I'm passionate about cybersecurity and love tackling complex challenges through 
 
 - **[Threat Hunting Scenario (Tor Browser Usage)](https://github.com/whozdae/threat-hunting-scenario-tor/blob/main/threat-hunting-scenario-tor-event-creation.md)**
 
+## Security Engineering & Monitoring 
+
+- [Home SOC with Azure Sentinel](https://github.com/whozdae/Home-SOC-in-Azure)
+
 <hr/>
 
 ## 🤳 Connect With Me
