@@ -14,7 +14,7 @@ I'm passionate about cybersecurity and love tackling complex challenges through 
 
 ## Security Engineering & Monitoring 
 
-- [Home SOC with Azure Sentinel](https://github.com/whozdae/Home-SOC-in-Azure)
+- [Home SOC + Honeynet in Azure Sentinel](https://github.com/whozdae/Home-SOC-in-Azure)
 
 <hr/>
 
