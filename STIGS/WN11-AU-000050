@@ -1,0 +1,52 @@
+<#
+.SYNOPSIS
+    Ensures that "Audit Process Creation" is set to "Success" for detailed tracking.
+
+.NOTES
+    Author          : Alex Adewoyin
+    LinkedIn        : linkedin.com/in/alexadewoyin/
+    GitHub          : github.com/whozdae
+    Date Created    : 2026-03-15
+    Version         : 1.0
+    STIG-ID         : WN11-AU-000050
+    Severity        : CAT II (Medium)
+
+.TESTED ON
+    Date(s) Tested  : 
+    Tested By       : 
+    Systems Tested  : 
+    PowerShell Ver. : 
+
+.USAGE
+    Run with Administrative privileges.
+    PS C:\> .\Remediate-WN11-AU-000050.ps1 
+#>
+
+# 1. Dependency Check: WN11-SO-000030 (Audit Subcategory Override)
+$lsaPath = "HKLM:\SYSTEM\CurrentControlSet\Control\Lsa"
+$lsaValue = "SCENoApplyLegacyAuditPolicy"
+$checkLsa = Get-ItemProperty -Path $lsaPath -Name $lsaValue -ErrorAction SilentlyContinue
+
+if ($null -eq $checkLsa -or $checkLsa.$lsaValue -ne 1) {
+    Write-Host "WARNING: WN11-SO-000030 is not enabled. Subcategory auditing may not be effective." -ForegroundColor Yellow
+}
+
+# 2. AuditPol Configuration: Set Process Creation to Success
+Write-Host "Configuring Audit Policy: Detailed Tracking >> Process Creation - Success..." -ForegroundColor Cyan
+
+# GUID for Process Creation: {0cce922b-69ae-11d9-bed3-505054503030}
+# We use the name for readability, but AuditPol is the authoritative tool for Advanced Audit Policy
+auditpol /set /subcategory:"Process Creation" /success:enable
+
+# 3. Verification
+$auditStatus = auditpol /get /subcategory:"Process Creation"
+
+if ($auditStatus -like "*Success*") {
+    Write-Host "COMPLIANT: WN11-AU-000050 - Process Creation Success auditing is enabled." -ForegroundColor Green
+}
+else {
+    Write-Host "ERROR: Failed to set Audit Policy." -ForegroundColor Red
+}
+
+# 4. Force Group Policy Update
+gpupdate /force
