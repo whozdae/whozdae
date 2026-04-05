@@ -16,6 +16,8 @@ I'm passionate about cybersecurity and love tackling complex challenges through 
 
 - [Home SOC + Honeynet in Azure Sentinel](https://github.com/whozdae/Home-SOC-in-Azure)
 
+- [Keylogger Built W/ Python](https://github.com/whozdae/APK-w-Discord-Webhook)
+
 <hr/>
 
 ## 🤳 Connect With Me
