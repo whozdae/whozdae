@@ -23,6 +23,14 @@ I automated the three moments where access is created, changed, and revoked, tri
 
 `Entra ID Governance` `Lifecycle Workflows` `Microsoft Graph` `PowerShell 7` `NIST 800-53 AC-2`
 
+### [Automated Vendor Access Recertification in Entra ID](https://github.com/whozdae/entra-identity-governance-access-reviews)
+I built a fail-closed access review that removes vendor access nobody is reviewing, plus a governed path for requesting it back.
+- **Result:** 2 of 2 dormant vendor accounts were denied and removed from a sensitive group by the Access Reviews service, with no administrator action at removal time.
+- Set the review to default Deny with auto-apply, so a reviewer who never responds removes access instead of keeping it.
+- Built an access package with two-stage approval, approver justification, and 90-day expiry, all scripted against Microsoft Graph with `-WhatIf`, idempotent reruns, and a rollback script.
+
+`Entra ID Governance` `Access Reviews` `Entitlement Management` `Microsoft Graph` `PowerShell` `NIST 800-53 AC-2`
+
 ### [Entra ID → Okta SAML Federation with Layered MFA](https://github.com/whozdae/entra-okta-saml-federation)
 I federated Entra ID (identity provider) into Okta (service provider) over SAML 2.0, with MFA enforced on both sides.
 - Debugged 7 distinct failures across both directories (AADSTS errors, NameID format, JIT provisioning vs. account linking) by cross-checking both sign-in logs against the decoded assertion.
@@ -45,7 +53,7 @@ I replaced broad built-in roles with two narrowly scoped custom roles, then remo
 
 | Area | Tools and techniques |
 | :--- | :--- |
-| **Identity & Access Management** | Microsoft Entra ID, Lifecycle Workflows (JML), Privileged Identity Management, Azure RBAC and custom roles, SAML 2.0 SSO, MFA, Okta |
+| **Identity & Access Management** | Microsoft Entra ID, Lifecycle Workflows (JML), access reviews, entitlement management, Privileged Identity Management, Azure RBAC and custom roles, SAML 2.0 SSO, MFA, Okta |
 | **Automation** | PowerShell 7, Microsoft Graph PowerShell SDK and REST API, Az module |
 | **Security Operations** | Microsoft Sentinel, Microsoft Defender for Endpoint, KQL, MITRE ATT&CK |
 | **Vulnerability Management** | Tenable/Nessus, DISA STIG hardening, PowerShell remediation |
