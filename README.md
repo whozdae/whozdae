@@ -1,10 +1,11 @@
 # Alex Adewoyin
 
-**Identity & Access Management · Microsoft Entra ID · Azure RBAC · Identity Governance**
+**Security Engineer · Identity & Access Management**<br>
+Microsoft Entra ID · Azure RBAC · Okta · Identity Governance
 
-Cyber Security Support Analyst (Vulnerability Management & SecOps) at Log(N) Pacific, building toward IAM engineering. I build identity controls in Entra ID, Azure, and Okta with PowerShell and Microsoft Graph, then prove they work with evidence: audit logs, before/after state diffs, and decoded tokens, not screenshots of settings.
+I build identity controls in Entra ID, Azure, and Okta with PowerShell and Microsoft Graph, then prove they work with evidence: audit logs, before/after state diffs, and decoded tokens, not screenshots of settings. Day to day at Log(N) Pacific I work vulnerability management and SecOps: Tenable scanning, PowerShell remediation, and DISA STIG hardening.
 
-**Certifications:** CompTIA Security+ · ISACA CISM · EC-Council CEH · Google Cybersecurity Certificate<br>
+**Certifications:** CompTIA Security+ · Google Cybersecurity Certificate<br>
 **In progress:** Microsoft SC-200, then SC-300 · TryHackMe SAL1 · B.S. Cybersecurity & Information Assurance (WGU)
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-alexadewoyin-0A66C2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/alexadewoyin/)
